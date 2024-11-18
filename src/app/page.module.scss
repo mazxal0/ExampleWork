@@ -1,0 +1,40 @@
+.root {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text {
+  font-size: 22px;
+  font-family: var(--ep-font-syncopate-bold);
+}
+
+.middle {
+  font-size: 22px;
+  font-family: var(--ep-font-syncopate-bold);
+  padding: 12px 0 24px 0;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+  place-items: center;
+}

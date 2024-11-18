@@ -1,0 +1,56 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "MontserratSemiBold", "helvica", "arial", sans-serif;
+  background-color: var(--ep-item-background-color) !important; // Цвет фона историй (TODO: Сделайть нормальную тёмную тему)
+}
+
+a {
+  color: var(--ep-color-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ep-font-syncopate-bold: "SyncopateBold", sans-serif;
+  --ep-font-montserrat-bold: "MontserratBold", sans-serif;
+  --ep-font-montserrat-semi-bold: "MontserratSemiBold", sans-serif;
+  --ep-font-montserrat-regular: "MontserratRegular", sans-serif;
+  --ep-color-primary: #ff9900 !important;
+  --ep-primary-faded: #ffa51d;
+  --ep-color-success: #46c93a;
+  --ep-color-danger: #ee1415;
+
+  --ep-main-background-color: #000000;
+  --ep-second-background-color: #0c0c0c;
+  --ep-item-background-color: #181818;
+  --ep-second-item-background-color: #423e3e;
+  --ep-text-color: #fff;
+  --ep-second-text-color: #a3a3a3;
+  --ep-text-disabled: #747474;
+}
+
+@font-face {
+  font-family: "SyncopateBold";
+  src: url("./fonts/Syncopate-Bold-Cyr.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MontserratBold";
+  src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MontserratSemiBold";
+  src: url("./fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: url("./fonts/Montserrat-Regular.ttf") format("truetype");
+}
