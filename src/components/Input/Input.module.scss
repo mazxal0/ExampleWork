@@ -1,0 +1,48 @@
+.root {
+  position: relative;
+  font-size: large;
+  display: inline-flex;
+  width: 100%;
+}
+
+.input {
+  all: unset;
+  padding: 18px;
+  width: 100%;
+  color: var(--ep-text-color);
+  border: 1px solid var(--ep-text-disabled);
+  border-color: var(--ep-text-disabled);
+  border-radius: 10px;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+}
+
+.input:is(:focus, :not(:placeholder-shown), .input:-webkit-autofill) {
+  color: var(--ep-text-color);
+}
+
+.input:is(:hover, :focus) {
+  border-color: var(--ep-color-primary);
+}
+
+.input:is(:focus, :not(:placeholder-shown), .input:-webkit-autofill) ~ .label {
+  transform: translateY(-130%) scale(0.7);
+  color: var(--ep-color-primary) !important;
+  padding-inline: 0.3em;
+}
+
+.label {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  color: var(--ep-text-disabled);
+  background-color: var(--ep-item-background-color);
+  pointer-events: none;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--ep-second-background-color) inset !important;
+}
