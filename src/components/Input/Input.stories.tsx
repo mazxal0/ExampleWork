@@ -10,9 +10,13 @@ const meta = {
   tags: ["autodocs"],
   args: {
     label: "input",
+    variant: "large",
+    background: "item",
   },
   argTypes: {
     label: { type: "string" },
+    variant: { type: "string" },
+    background: { type: "string" },
   },
 } satisfies Meta<typeof Input>;
 
@@ -23,6 +27,8 @@ type Story = StoryObj<typeof meta>;
 export const Test: Story = {
   args: {
     label: "test",
+    variant: "large",
+    background: "item",
     onChange: (value) => {
       console.log(value);
     },

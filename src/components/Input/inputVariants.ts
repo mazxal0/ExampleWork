@@ -5,13 +5,19 @@ export type InputVariants = VariantProps<typeof inputVariants>;
 
 export const inputVariants = cva(styles.input, {
   variants: {
-    size: {
+    variant: {
       large: styles.large,
       medium: styles.medium,
       small: styles.small,
     },
+    background: {
+      main: styles.main_color,
+      second: styles.second_color,
+      item: styles.item_color,
+    },
   },
   defaultVariants: {
-    size: "large",
+    variant: "medium",
+    background: "item",
   },
 });

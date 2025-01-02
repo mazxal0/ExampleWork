@@ -1,19 +1,29 @@
-import { ComponentPropsWithoutRef, FC } from "react";
+import { ComponentPropsWithoutRef } from "react";
 import styles from "./Input.module.scss";
 import { InputVariants, inputVariants } from "./inputVariants";
 
-export type InputProps = {
-  label: string;
-  // icon?: React.ReactNode;
-  onChange: (value: string) => void;
-};
+type InputProps = ComponentPropsWithoutRef<"input"> &
+  InputVariants & {
+    label?: string;
+    onChange: (value: string) => void;
+  };
 
-type InputCvaProps = ComponentPropsWithoutRef<"input"> & InputVariants;
-
-export const Input: FC<InputProps> = ({ label }) => {
+export const Input = ({
+  label,
+  onChange,
+  variant,
+  background,
+  className,
+  ...props
+}: InputProps) => {
   return (
     <div className={styles.root}>
-      <input className={styles.input} type="text" placeholder=" " />
+      <input
+        {...props}
+        className={inputVariants({ variant, background })}
+        type="text"
+        placeholder=""
+      />
       <label htmlFor={label} className={styles.label}>
         {label}
       </label>
