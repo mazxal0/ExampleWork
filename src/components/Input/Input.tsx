@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef } from "react";
 import styles from "./Input.module.scss";
 import { InputVariants, inputVariants } from "./inputVariants";
+import clsx from "clsx";
 
 type InputProps = ComponentPropsWithoutRef<"input"> &
   InputVariants & {
@@ -24,7 +25,18 @@ export const Input = ({
         type="text"
         placeholder=""
       />
-      <label htmlFor={label} className={styles.label}>
+      <label
+        htmlFor={label}
+        className={clsx(
+          styles.label,
+          variant == "large" && styles.label_large,
+          variant == "medium" && styles.label_medium,
+          variant == "small" && styles.label_small,
+          background == "main" && styles.main_color,
+          background == "second" && styles.second_color,
+          background == "item" && styles.item_color
+        )}
+      >
         {label}
       </label>
     </div>

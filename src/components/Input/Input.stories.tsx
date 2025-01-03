@@ -24,13 +24,65 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Test: Story = {
+export const Base: Story = {
   args: {
-    label: "test",
+    label: "Base",
+    variant: "large",
+    background: "main",
+    onChange: () => {},
+  },
+};
+
+export const Large: Story = {
+  args: {
+    label: "Large",
+    variant: "large",
+    background: "main",
+    onChange: () => {},
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    label: "Medium",
+    variant: "medium",
+    background: "main",
+    onChange: () => {},
+  },
+};
+
+export const Small: Story = {
+  args: {
+    label: "Small",
+    variant: "small",
+    background: "main",
+    onChange: () => {},
+  },
+};
+
+export const ColorSecond: Story = {
+  args: {
+    label: "SecondBG",
+    variant: "large",
+    background: "second",
+    onChange: () => {},
+  },
+};
+
+export const ColorItem: Story = {
+  args: {
+    label: "ItemBG",
     variant: "large",
     background: "item",
-    onChange: (value) => {
-      console.log(value);
-    },
+    onChange: () => {},
+  },
+};
+
+export const NoLabel: Story = {
+  args: {
+    label: "",
+    variant: "large",
+    background: "main",
+    onChange: () => {},
   },
 };
