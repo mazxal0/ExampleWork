@@ -6,13 +6,11 @@ import clsx from "clsx";
 type InputProps = ComponentPropsWithoutRef<"input"> &
   InputVariants & {
     label?: string;
-    value?: string;
     onChange: (value: string) => void;
   };
 
 export const Input = ({
   label,
-  value,
   onChange,
   variant,
   background,
@@ -28,7 +26,6 @@ export const Input = ({
     <div className={styles.root}>
       <input
         {...props}
-        value={value}
         onChange={handleInputChange}
         className={inputVariants({ variant, background })}
         type="text"
