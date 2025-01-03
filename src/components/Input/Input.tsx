@@ -6,21 +6,30 @@ import clsx from "clsx";
 type InputProps = ComponentPropsWithoutRef<"input"> &
   InputVariants & {
     label?: string;
+    value?: string;
     onChange: (value: string) => void;
   };
 
 export const Input = ({
   label,
+  value,
   onChange,
   variant,
   background,
   className,
   ...props
 }: InputProps) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    onChange(inputValue);
+  };
+
   return (
     <div className={styles.root}>
       <input
         {...props}
+        value={value}
+        onChange={handleInputChange}
         className={inputVariants({ variant, background })}
         type="text"
         placeholder=""
