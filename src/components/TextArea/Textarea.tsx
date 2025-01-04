@@ -6,11 +6,13 @@ import clsx from "clsx";
 type TextareaProps = ComponentPropsWithoutRef<"textarea"> &
   TextareaVariants & {
     label?: string;
+    labelColor?: "standard" | "disabled";
     onChange: (value: string) => void;
   };
 
 export const Textarea = ({
   label,
+  labelColor = "standard",
   onChange,
   background,
   height,
@@ -38,7 +40,8 @@ export const Textarea = ({
           styles.label,
           background == "main" && styles.main_color,
           background == "second" && styles.second_color,
-          background == "item" && styles.item_color
+          background == "item" && styles.item_color,
+          labelColor == "disabled" && styles.disabled
         )}
       >
         {label}
