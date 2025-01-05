@@ -15,7 +15,7 @@ export const Textarea = ({
   condition = "active",
   onChange,
   background,
-  height,
+  variant,
   resize,
   className,
   ...props
@@ -31,7 +31,7 @@ export const Textarea = ({
         disabled={condition == "disabled" ? true : false}
         autoComplete="off"
         id={label}
-        className={textareaVariants({ background, height, resize })}
+        className={textareaVariants({ background, variant, resize })}
         onChange={handleInputChange}
         placeholder=" "
       ></textarea>

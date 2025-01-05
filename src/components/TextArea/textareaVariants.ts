@@ -5,7 +5,7 @@ export type TextareaVariants = VariantProps<typeof textareaVariants>;
 
 export const textareaVariants = cva(styles.textarea, {
   variants: {
-    height: {
+    variant: {
       small: styles.small,
       medium: styles.medium,
       large: styles.large,
@@ -24,7 +24,7 @@ export const textareaVariants = cva(styles.textarea, {
     },
   },
   defaultVariants: {
-    height: "medium",
+    variant: "medium",
     background: "main",
     resize: "both",
   },
