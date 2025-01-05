@@ -8,15 +8,30 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: {
-    label: "input",
-    variant: "large",
-    background: "item",
-  },
   argTypes: {
-    label: { type: "string" },
-    variant: { type: "string" },
-    background: { type: "string" },
+    label: { description: "Заголовок Input", type: "string" },
+    variant: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+      description: "Размер Input",
+      type: "string",
+    },
+    background: {
+      control: { type: "select" },
+      options: ["main", "second", "item"],
+      description: "Цвет заднего фона Input",
+      type: "string",
+    },
+    onChange: {
+      description: "Изменение значения Input",
+    },
+    condition: {
+      control: { type: "select" },
+      options: ["active", "disabled"],
+      description: "Состояние Input",
+      defaultValue: "active",
+      type: "string",
+    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -83,6 +98,16 @@ export const NoLabel: Story = {
     label: "",
     variant: "large",
     background: "main",
+    onChange: () => {},
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: "Disabled",
+    variant: "large",
+    background: "main",
+    condition: "disabled",
     onChange: () => {},
   },
 };
