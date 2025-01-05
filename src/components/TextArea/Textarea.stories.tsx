@@ -8,17 +8,36 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: {
-    label: "input",
-    height: "medium",
-    background: "item",
-    resize: "both",
-  },
   argTypes: {
-    label: { type: "string" },
-    height: { type: "string" },
-    background: { type: "string" },
-    resize: { type: "string" },
+    label: { description: "Заголовок Textarea", type: "string" },
+    height: {
+      control: { type: "select" },
+      options: ["small", "medium", "large", "none"],
+      description: "Изначальная высота Textarea",
+      type: "string",
+    },
+    background: {
+      control: { type: "select" },
+      options: ["main", "second", "item"],
+      description: "Цвет заднего фона Textarea",
+      type: "string",
+    },
+    resize: {
+      control: { type: "select" },
+      options: ["both", "horizontal", "vertical", "none"],
+      description: "Изменение размера Textarea",
+      type: "string",
+    },
+    onChange: {
+      description: "Изменение значения Textarea",
+    },
+    condition: {
+      control: { type: "select" },
+      options: ["active", "disabled"],
+      description: "Состояние Textarea",
+      defaultValue: "active",
+      type: "string",
+    },
   },
 } satisfies Meta<typeof Textarea>;
 
@@ -30,7 +49,7 @@ export const Base: Story = {
   args: {
     label: "Base",
     background: "main",
-    height: "medium",
+    height: "small",
     resize: "both",
     onChange: () => {},
   },
@@ -122,6 +141,17 @@ export const NoLabel: Story = {
     background: "main",
     height: "small",
     resize: "both",
+    onChange: () => {},
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: "Disabled",
+    background: "main",
+    height: "small",
+    resize: "both",
+    condition: "disabled",
     onChange: () => {},
   },
 };

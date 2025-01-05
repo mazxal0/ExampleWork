@@ -6,13 +6,13 @@ import clsx from "clsx";
 type TextareaProps = ComponentPropsWithoutRef<"textarea"> &
   TextareaVariants & {
     label?: string;
-    labelColor?: "standard" | "disabled";
+    condition?: "active" | "disabled";
     onChange: (value: string) => void;
   };
 
 export const Textarea = ({
   label,
-  labelColor = "standard",
+  condition = "active",
   onChange,
   background,
   height,
@@ -28,6 +28,7 @@ export const Textarea = ({
     <div className={styles.root}>
       <textarea
         {...props}
+        disabled={condition == "disabled" ? true : false}
         autoComplete="off"
         id={label}
         className={textareaVariants({ background, height, resize })}
@@ -41,7 +42,7 @@ export const Textarea = ({
           background == "main" && styles.main_color,
           background == "second" && styles.second_color,
           background == "item" && styles.item_color,
-          labelColor == "disabled" && styles.disabled
+          condition == "disabled" && styles.disabled
         )}
       >
         {label}

@@ -3,7 +3,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: "MontserratSemiBold", "helvica", "arial", sans-serif;
-  background-color: var(--ep-item-background-color) !important; // Цвет фона историй (TODO: Сделайть нормальную тёмную тему)
+  background-color: var(
+    --ep-item-background-color
+  ) !important; // Цвет фона историй (TODO: Сделайть нормальную тёмную тему)
 }
 
 a {
