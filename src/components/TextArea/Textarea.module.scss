@@ -1,0 +1,109 @@
+.root {
+  position: relative;
+  font-size: large !important;
+}
+
+.textarea {
+  all: unset;
+  display: flex;
+  white-space: pre-wrap;
+  padding: 16px;
+  width: 100%;
+  min-height: 60px;
+  color: var(--ep-text-color);
+  border: 1px solid var(--ep-text-disabled);
+  border-color: var(--ep-text-disabled);
+  border-radius: 10px;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+
+  &::-webkit-scrollbar {
+    width: 0.8em;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--ep-second-background-color);
+    border-radius: 1000px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--ep-color-primary);
+    border-radius: 0.5em;
+    border: 4px solid var(--ep-item-background-color);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--ep-text-disabled);
+  }
+}
+
+// height
+
+.small {
+  height: 128px;
+}
+
+.medium {
+  height: 256px;
+}
+
+.large {
+  height: 512px;
+}
+
+.none_height {
+  height: none !important;
+}
+
+// background
+
+.main_color {
+  background-color: var(--ep-main-background-color);
+}
+
+.second_color {
+  background-color: var(--ep-second-background-color);
+}
+
+.item_color {
+  background-color: var(--ep-item-background-color);
+}
+
+// resize
+
+.both {
+  resize: both;
+}
+
+.horizontal {
+  resize: horizontal;
+}
+
+.vertical {
+  resize: vertical;
+}
+
+.none_resize {
+  resize: none;
+}
+
+.textarea:is(:hover, :focus) {
+  border-color: var(--ep-color-primary);
+}
+
+.textarea:is(:focus, :not(:placeholder-shown)) ~ label {
+  transform: translateY(-130%) scale(0.7);
+  color: var(--ep-color-primary);
+  padding-inline: 0.3em;
+}
+
+.label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: var(--ep-text-color);
+  pointer-events: none;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.disabled {
+  color: var(--ep-text-disabled) !important;
+}
