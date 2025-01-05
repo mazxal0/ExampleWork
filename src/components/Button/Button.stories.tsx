@@ -8,15 +8,20 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: {
-    children: "Нажми на меня",
-    variant: "primary",
-    size: "large",
-  },
   argTypes: {
-    children: { type: "string" },
-    variant: { type: "string" },
-    size: { type: "string" },
+    children: { description: "Текст Button", type: "string" },
+    variant: {
+      control: { type: "select" },
+      options: ["primary", "secondary"],
+      description: "Внешний вид Button",
+      type: "string",
+    },
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+      description: "Размер Button",
+      type: "string",
+    },
   },
 } satisfies Meta<typeof Button>;
 
@@ -29,29 +34,39 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: "primary",
+    children: "Нажми на меня",
+    size: "large",
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: "secondary",
+    children: "Ну жмакни",
+    size: "large",
   },
 };
 
 export const Large: Story = {
   args: {
+    variant: "primary",
     size: "large",
+    children: "Ну давай",
   },
 };
 
 export const Medium: Story = {
   args: {
     size: "medium",
+    variant: "primary",
+    children: "Жми уже",
   },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
+    variant: "primary",
+    children: "Да ну тебя :(",
   },
 };
