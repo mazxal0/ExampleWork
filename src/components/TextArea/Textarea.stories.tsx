@@ -10,7 +10,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     label: { description: "Заголовок Textarea", type: "string" },
-    variant: {
+    size: {
       control: { type: "select" },
       options: ["small", "medium", "large", "none"],
       description: "Изначальный размер Textarea",
@@ -49,7 +49,7 @@ export const Base: Story = {
   args: {
     label: "Base",
     background: "main",
-    variant: "small",
+    size: "small",
     resize: "both",
     onChange: () => {},
   },
@@ -59,7 +59,7 @@ export const Large: Story = {
   args: {
     label: "Large",
     background: "main",
-    variant: "large",
+    size: "large",
     resize: "both",
     onChange: () => {},
   },
@@ -69,7 +69,7 @@ export const Medium: Story = {
   args: {
     label: "Medium",
     background: "main",
-    variant: "medium",
+    size: "medium",
     resize: "both",
     onChange: () => {},
   },
@@ -79,7 +79,7 @@ export const Small: Story = {
   args: {
     label: "Small",
     background: "main",
-    variant: "small",
+    size: "small",
     resize: "both",
     onChange: () => {},
   },
@@ -89,7 +89,7 @@ export const ColorSecond: Story = {
   args: {
     label: "SecondBG",
     background: "second",
-    variant: "small",
+    size: "small",
     resize: "both",
     onChange: () => {},
   },
@@ -99,7 +99,7 @@ export const ColorItem: Story = {
   args: {
     label: "ItemBG",
     background: "item",
-    variant: "small",
+    size: "small",
     resize: "both",
     onChange: () => {},
   },
@@ -109,7 +109,7 @@ export const VerticalResize: Story = {
   args: {
     label: "Vertical",
     background: "main",
-    variant: "small",
+    size: "small",
     resize: "vertical",
     onChange: () => {},
   },
@@ -119,7 +119,7 @@ export const HorizontalResize: Story = {
   args: {
     label: "Horizontal",
     background: "main",
-    variant: "small",
+    size: "small",
     resize: "horizontal",
     onChange: () => {},
   },
@@ -129,7 +129,7 @@ export const NoResize: Story = {
   args: {
     label: "No resize",
     background: "main",
-    variant: "small",
+    size: "small",
     resize: "none",
     onChange: () => {},
   },
@@ -139,7 +139,7 @@ export const NoLabel: Story = {
   args: {
     label: "",
     background: "main",
-    variant: "small",
+    size: "small",
     resize: "both",
     onChange: () => {},
   },
@@ -149,7 +149,7 @@ export const Disabled: Story = {
   args: {
     label: "Disabled",
     background: "main",
-    variant: "small",
+    size: "small",
     resize: "both",
     condition: "disabled",
     onChange: () => {},
