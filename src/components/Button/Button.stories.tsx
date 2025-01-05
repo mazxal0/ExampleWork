@@ -8,7 +8,6 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-
   argTypes: {
     children: { description: "Текст Button", type: "string" },
     variant: {

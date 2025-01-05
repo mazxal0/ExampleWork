@@ -8,13 +8,19 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: {
-    size: "medium",
-    color: "primary",
-  },
   argTypes: {
-    size: { type: "string" },
-    color: { type: "string" },
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large", "x_large"],
+      description: "Размер Spinner",
+      type: "string",
+    },
+    color: {
+      control: { type: "select" },
+      options: ["primary", "black", "white"],
+      description: "Цвет Spinner",
+      type: "string",
+    },
   },
 } satisfies Meta<typeof Spinner>;
 
@@ -27,18 +33,26 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     color: "primary",
+    size: "medium",
   },
 };
 
 export const Black: Story = {
   args: {
     color: "black",
+    size: "medium",
   },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: "medium",
   },
 };
 
