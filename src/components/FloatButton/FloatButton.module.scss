@@ -1,0 +1,181 @@
+.button {
+  position: fixed;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 100;
+  transition:
+    opacity 500ms ease-in-out;
+
+  @media(hover: hover) {
+    &:hover .float_button_information {
+      opacity: 1;
+    }
+  }
+
+  .is_open {
+    animation: appearance_other_button 500ms ease forwards;
+    @keyframes appearance_other_buttons {
+      from {
+       opacity: 0;
+       transform: translateY(0);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(-50px);
+      }
+    }
+  }
+
+  .is_close {
+    animation: appearance_other_button 500ms ease forwards;
+
+    @keyframes appearance_other_buttons {
+      from {
+        opacity: 1;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &.is_show {
+    opacity: 1;
+  }
+}
+
+.opening_float_button {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  background-color: var(--ep-second-text-color);
+}
+
+// cva styles
+
+.primary {
+  background-color: var(--ep-color-primary);
+}
+
+.secondary {
+  background-color: var(--ep-second-text-color);
+}
+
+.left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.center {
+  bottom: 20px;
+  left: 50%;
+}
+
+.right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.scrolling_to_top {
+  opacity: 0;
+}
+
+.text {
+  opacity: 1;
+}
+
+.float_button_information {
+  position: absolute;
+  right: 45px;
+  bottom: 7px;
+  color: var(--ep-text-color);
+  background-color: var(--ep-second-item-background-color);
+  font-family: var(--ep-font-montserrat-regular);
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-in-out;
+
+  @media(hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.other_button {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99;
+}
+
+// images or icons
+
+@mixin standard_div_image_style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.standard_div_image_style {
+  @include standard_div_image_style;
+}
+
+.div_change_icons {
+  @include standard_div_image_style;
+}
+
+.icon {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  transition:
+    opacity 500ms ease-in-out;
+}
+
+.show_arrow {
+  opacity: 1;
+}
+
+.show_cross {
+  opacity: 1;
+}
+
+.open_other_buttons {
+  animation: appearance_other_buttons 500ms ease forwards;
+}
+
+.close_other_buttons {
+  animation: close_other_buttons 500ms ease forwards;
+}
+
+@keyframes appearance_other_buttons {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes close_other_buttons {
+  from {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}

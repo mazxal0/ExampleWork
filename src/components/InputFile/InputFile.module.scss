@@ -1,0 +1,89 @@
+.root {
+  position: relative;
+  font-size: large;
+  display: inline-flex;
+  width: 100%;
+}
+
+.input {
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid var(--ep-color-primary);
+  color: var(--ep-text-color);
+}
+
+.label {
+  display: flex;
+  min-width: 175px;
+  width: 100%;
+}
+
+.inputFile {
+  display: none;
+}
+
+.file_name {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.file_text {
+  position: relative;
+  background-color: var(--ep-main-background-color);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 160px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  transition:
+    transform 500ms ease-in,
+    border-raduis 500ms ease-in;
+}
+
+.file_label {
+  position: absolute;
+  transform: translateY(var(--anim-height)) scale(0.7);
+  padding-inline: 0.3em;
+  border: 1px solid var(--ep-color-primary);
+}
+
+// cva styles
+
+// variant
+
+.large {
+  padding: 18px;
+  --anim-height: -135%;
+}
+
+.medium {
+  padding: 14px;
+  --anim-height: -115%;
+}
+
+.small {
+  padding: 10px;
+  --anim-height: -95%;
+}
+
+// background
+
+.main_color {
+  background-color: var(--ep-main-background-color);
+}
+
+.second_color {
+  background-color: var(--ep-second-background-color);
+}
+
+.item_color {
+  background-color: var(--ep-item-background-color);
+}
+
+// condition
+
+.disabled {
+  color: var(--ep-text-disabled);
+}
